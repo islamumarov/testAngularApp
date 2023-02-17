@@ -9,7 +9,7 @@ import { FormBuilder, FormControl, FormGroup, NgModel, Validators } from '@angul
 export class AppComponent implements OnInit {
 
   public loggedIn: boolean | undefined;
-
+  public submitted: boolean | undefined;
 
   public loginForm = new FormGroup({
     username: new FormControl('', [Validators.required, Validators.email]),
@@ -29,6 +29,9 @@ export class AppComponent implements OnInit {
     //username === "test@test.com" && password === "test"
     if (this.loginForm.value.username === "test@test.com" && this.loginForm.value.password === "test") {
       this.loggedIn = true;
+    }
+    else {
+      this.submitted = true;
     }
   }
 }

@@ -1,6 +1,9 @@
 <div *ngIf="loggedIn">
   <h1>successfully logged In</h1>
 </div>
+<div *ngIf="submitted && !loggedIn">
+  <h2 style="color: red;">Username or passwor not correct</h2>
+</div>
 <div *ngIf="!loggedIn">
   <h1>Log In</h1>
   <!---- loginForm formGroup contains username and password   -->
